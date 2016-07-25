@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" xmlns:html="http://www.w3.org/TR/REC-html40">
+  <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+    <Version>11.9999</Version>
+  </DocumentProperties>
+  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+    <WindowHeight>12405</WindowHeight>
+    <WindowWidth>19020</WindowWidth>
+    <WindowTopX>120</WindowTopX>
+    <WindowTopY>60</WindowTopY>
+    <ProtectStructure>False</ProtectStructure>
+    <ProtectWindows>False</ProtectWindows>
+  </ExcelWorkbook>
+  <Styles>
+    <Style ss:ID="Default" ss:Name="Normal">
+      <Alignment ss:Vertical="Bottom" />
+      <Borders />
+      <Font />
+      <Interior />
+      <NumberFormat />
+      <Protection />
+    </Style>
+    <Style ss:ID="s21">
+      <Alignment ss:Horizontal="Center" ss:Vertical="Bottom" />
+    </Style>
+    <Style ss:ID="s22">
+      <Alignment ss:Horizontal="Center" ss:Vertical="Bottom" />
+      <Borders>
+        <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" />
+        <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" />
+        <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" />
+        <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" />
+      </Borders>
+    </Style>
+  </Styles>
+  <Worksheet ss:Name="Puzzle">
+    <Table ss:ExpandedColumnCount="256" ss:ExpandedRowCount="8" x:FullColumns="1" x:FullRows="1" ss:StyleID="s21" ss:DefaultRowHeight="15.75">
+      <Column ss:StyleID="s21" ss:AutoFitWidth="0" ss:Width="17.25" ss:Span="255" />
+      <Row ss:AutoFitHeight="0">
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">0</Data></Cell>
+        <Cell ss:StyleID="s22" />
+        <Cell ss:StyleID="s22" />
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">0</Data></Cell>
+        <Cell ss:StyleID="s22" />
+        <Cell ss:StyleID="s22" />
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">1</Data></Cell>
+        <Cell ss:StyleID="s22" />
+      </Row>
+      <Row ss:AutoFitHeight="0">
+        <Cell ss:StyleID="s22" />
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">0</Data></Cell>
+        <Cell ss:StyleID="s22" />
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">0</Data></Cell>
+        <Cell ss:StyleID="s22" />
+        <Cell ss:StyleID="s22" />
+        <Cell ss:StyleID="s22" />
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">1</Data></Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0">
+        <Cell ss:StyleID="s22" />
+        <Cell ss:StyleID="s22" />
+        <Cell ss:StyleID="s22" />
+        <Cell ss:StyleID="s22" />
+        <Cell ss:StyleID="s22" />
+        <Cell ss:StyleID="s22" />
+        <Cell ss:StyleID="s22" />
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">1</Data></Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0">
+        <Cell ss:StyleID="s22" />
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">0</Data></Cell>
+        <Cell ss:StyleID="s22" />
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">1</Data></Cell>
+        <Cell ss:StyleID="s22" />
+        <Cell ss:StyleID="s22" />
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">0</Data></Cell>
+        <Cell ss:StyleID="s22" />
+      </Row>
+      <Row ss:AutoFitHeight="0">
+        <Cell ss:StyleID="s22" />
+        <Cell ss:StyleID="s22" />
+        <Cell ss:StyleID="s22" />
+        <Cell ss:StyleID="s22" />
+        <Cell ss:StyleID="s22" />
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">1</Data></Cell>
+        <Cell ss:StyleID="s22" />
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">1</Data></Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0">
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">1</Data></Cell>
+        <Cell ss:StyleID="s22" />
+        <Cell ss:StyleID="s22" />
+        <Cell ss:StyleID="s22" />
+        <Cell ss:StyleID="s22" />
+        <Cell ss:StyleID="s22" />
+        <Cell ss:StyleID="s22" />
+        <Cell ss:StyleID="s22" />
+      </Row>
+      <Row ss:AutoFitHeight="0">
+        <Cell ss:StyleID="s22" />
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">0</Data></Cell>
+        <Cell ss:StyleID="s22" />
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">1</Data></Cell>
+        <Cell ss:StyleID="s22" />
+        <Cell ss:StyleID="s22" />
+        <Cell ss:StyleID="s22" />
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">0</Data></Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0">
+        <Cell ss:StyleID="s22" />
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">0</Data></Cell>
+        <Cell ss:StyleID="s22" />
+        <Cell ss:StyleID="s22" />
+        <Cell ss:StyleID="s22" />
+        <Cell ss:StyleID="s22" />
+        <Cell ss:StyleID="s22" />
+        <Cell ss:StyleID="s22" />
+      </Row>
+    </Table>
+    <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+      <Unsynced />
+      <Selected />
+      <ProtectObjects>False</ProtectObjects>
+      <ProtectScenarios>False</ProtectScenarios>
+    </WorksheetOptions>
+  </Worksheet>
+  <Worksheet ss:Name="Answer">
+    <Table ss:ExpandedColumnCount="256" ss:ExpandedRowCount="8" x:FullColumns="1" x:FullRows="1" ss:StyleID="s21" ss:DefaultRowHeight="15.75">
+      <Column ss:StyleID="s21" ss:AutoFitWidth="0" ss:Width="17.25" ss:Span="255" />
+      <Row ss:AutoFitHeight="0">
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">0</Data></Cell>
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">1</Data></Cell>
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">1</Data></Cell>
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">0</Data></Cell>
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">0</Data></Cell>
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">1</Data></Cell>
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">1</Data></Cell>
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">0</Data></Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0">
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">1</Data></Cell>
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">0</Data></Cell>
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">1</Data></Cell>
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">0</Data></Cell>
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">1</Data></Cell>
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">0</Data></Cell>
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">0</Data></Cell>
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">1</Data></Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0">
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">0</Data></Cell>
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">1</Data></Cell>
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">0</Data></Cell>
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">1</Data></Cell>
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">0</Data></Cell>
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">0</Data></Cell>
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">1</Data></Cell>
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">1</Data></Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0">
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">1</Data></Cell>
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">0</Data></Cell>
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">1</Data></Cell>
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">1</Data></Cell>
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">0</Data></Cell>
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">1</Data></Cell>
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">0</Data></Cell>
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">0</Data></Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0">
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">0</Data></Cell>
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">1</Data></Cell>
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">0</Data></Cell>
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">0</Data></Cell>
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">1</Data></Cell>
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">1</Data></Cell>
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">0</Data></Cell>
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">1</Data></Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0">
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">1</Data></Cell>
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">1</Data></Cell>
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">0</Data></Cell>
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">0</Data></Cell>
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">1</Data></Cell>
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">0</Data></Cell>
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">1</Data></Cell>
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">0</Data></Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0">
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">0</Data></Cell>
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">0</Data></Cell>
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">1</Data></Cell>
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">1</Data></Cell>
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">0</Data></Cell>
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">1</Data></Cell>
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">1</Data></Cell>
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">0</Data></Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0">
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">1</Data></Cell>
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">0</Data></Cell>
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">0</Data></Cell>
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">1</Data></Cell>
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">1</Data></Cell>
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">0</Data></Cell>
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">0</Data></Cell>
+        <Cell ss:StyleID="s22"><Data ss:Type="Number">1</Data></Cell>
+      </Row>
+    </Table>
+    <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+      <Unsynced />
+      <ProtectObjects>False</ProtectObjects>
+      <ProtectScenarios>False</ProtectScenarios>
+    </WorksheetOptions>
+  </Worksheet>
+</Workbook>
