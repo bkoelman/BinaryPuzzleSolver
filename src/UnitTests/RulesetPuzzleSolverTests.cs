@@ -1,5 +1,6 @@
 ﻿using System;
 using BinaryPuzzleSolver.Engine;
+using JetBrains.Annotations;
 using Xunit;
 
 namespace BinaryPuzzleSolver.UnitTests
@@ -137,6 +138,7 @@ namespace BinaryPuzzleSolver.UnitTests
             VerifySolve(source, source, solver => solver.ResolveNoDuplicateLines());
         }
 
+        [AssertionMethod]
         private void VerifySolve(string[] input, string[] expected, Action<RulesetPuzzleSolver> solveAction)
         {
             var factory = new SurfaceFactory();

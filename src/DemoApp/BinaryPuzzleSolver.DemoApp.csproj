@@ -6,6 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="jetbrains.annotations" Version="10.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Engine\BinaryPuzzleSolver.Engine.csproj" />
   </ItemGroup>
 
