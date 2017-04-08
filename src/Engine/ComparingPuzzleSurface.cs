@@ -7,7 +7,7 @@ namespace BinaryPuzzleSolver.Engine
     /// A puzzle surface wrapper that verifies setting cell values by comparing to the specified puzzle answer. When a proposed
     /// cell value differs from the answer, an <see cref="IncorrectSurfaceCellValueException" /> is thrown.
     /// </summary>
-    public class ComparingPuzzleSurface : IPuzzleSurface
+    public sealed class ComparingPuzzleSurface : IPuzzleSurface
     {
         private readonly IPuzzleSurface source;
         private readonly IPuzzleSurface answer;
@@ -94,8 +94,7 @@ namespace BinaryPuzzleSolver.Engine
                     bool? answerCell = answer.GetCell(lineIndex, columnIndex);
                     if (answerCell == null)
                     {
-                        throw new InvalidOperationException(string.Format("Missing value in answer surface at ({0},{1}).",
-                            lineIndex, columnIndex));
+                        throw new InvalidOperationException($"Missing value in answer surface at ({lineIndex},{columnIndex}).");
                     }
 
                     bool? sourceCell = source.GetCell(lineIndex, columnIndex);

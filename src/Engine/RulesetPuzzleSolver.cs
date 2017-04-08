@@ -10,7 +10,7 @@ namespace BinaryPuzzleSolver.Engine
     /// <summary>
     /// Attempts to solve as much as possible of a binary puzzle using built-in rulesets.
     /// </summary>
-    public class RulesetPuzzleSolver
+    public sealed class RulesetPuzzleSolver
     {
         private static readonly ArrayEqualityComparer<bool> BooleanArrayEqualityComparer = new ArrayEqualityComparer<bool>();
 
@@ -45,7 +45,7 @@ namespace BinaryPuzzleSolver.Engine
         {
             return TrySolve(surface =>
             {
-                // Because sequences of the same digit cannot be longer than two, before/after each 
+                // Because sequences of the same digit cannot be longer than two, before/after each
                 // such sequence must occur the opposite digit.
                 // Example: -11- => 0110
 
@@ -98,7 +98,7 @@ namespace BinaryPuzzleSolver.Engine
         {
             return TrySolve(surface =>
             {
-                // Because sequences of the same digit cannot be longer than two, in-between them 
+                // Because sequences of the same digit cannot be longer than two, in-between them
                 // must be the opposite digit.
                 // Example: 0-0 => 010
 
@@ -135,7 +135,7 @@ namespace BinaryPuzzleSolver.Engine
         {
             return TrySolve(surface =>
             {
-                // Because a line/column must have the same number of zeroes as ones, unknowns can 
+                // Because a line/column must have the same number of zeroes as ones, unknowns can
                 // be added by counting the occurences of zeroes and ones.
                 // Example: 11010-10101101001- =>  9x1 and 7x0, so need two more 0s => 110100101011010010
 
@@ -181,9 +181,9 @@ namespace BinaryPuzzleSolver.Engine
         {
             return TrySolve(surface =>
             {
-                // When a line/column has a single unknown zero/one, that digit can only be placed at a single 
+                // When a line/column has a single unknown zero/one, that digit can only be placed at a single
                 // spot, in order to obey the rule that sequences of the same digit cannot be longer than two.
-                // Example: 
+                // Example:
                 //   001-0--1-0 => 4x0 and 2x1, which means a single 0 needs to be placed.
                 // Possibilities:
                 //   00100--1-0 => 0010011110 => invalid, because sequence of 4x1
@@ -193,7 +193,7 @@ namespace BinaryPuzzleSolver.Engine
                 //
                 // Like the above, but when multiple valid solutions exist, we cannot solve the line/column. However,
                 // if all valid solutions set a single unknown to the same value, we can reduce the number of unknowns.
-                // Example: 
+                // Example:
                 //   101-0-1- => 3x1 and 2x0, which means a single 1 needs to be placed.
                 // Possibilities:
                 //   10110-1- => 10110010 => valid
@@ -212,7 +212,7 @@ namespace BinaryPuzzleSolver.Engine
                         int zeroCount = surface.GetCountInLine(lineIndex, false);
                         if (zeroCount == surface.ColumnCount / 2 - 1)
                         {
-                            // Need to place a single 0. 
+                            // Need to place a single 0.
                             needsSingleZeroOrOne = true;
                         }
                         else

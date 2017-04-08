@@ -4,7 +4,7 @@ using BinaryPuzzleSolver.Engine.Utilities;
 
 namespace BinaryPuzzleSolver.Engine
 {
-    public class SurfaceValidator
+    public sealed class SurfaceValidator
     {
         private static readonly ArrayEqualityComparer<bool> BooleanArrayEqualityComparer = new ArrayEqualityComparer<bool>();
 
@@ -23,7 +23,7 @@ namespace BinaryPuzzleSolver.Engine
         {
             // Implicit puzzle rules that are not verified here:
             // - LineCount and ColumnCount must be even and >= 2. This is ensured by factory/ctor.
-            // - Cell values must be in range [1, 0, -]. 
+            // - Cell values must be in range [1, 0, -].
             //   This is ensured by using bool? in the object model, which contains values in range [True, False, null].
 
             // Explicit puzzle rules that are verified by this method:
@@ -56,8 +56,8 @@ namespace BinaryPuzzleSolver.Engine
                         // Too many 1s.
                         if (throwOnError)
                         {
-                            throw new IncorrectPuzzleSurfaceException(string.Format("Too many 1s in {0} {1}.",
-                                isRotated ? "column" : "line", lineIndex));
+                            throw new IncorrectPuzzleSurfaceException(
+                                $"Too many 1s in {(isRotated ? "column" : "line")} {lineIndex}.");
                         }
                         return false;
                     }
@@ -68,8 +68,8 @@ namespace BinaryPuzzleSolver.Engine
                         // Too many 0s.
                         if (throwOnError)
                         {
-                            throw new IncorrectPuzzleSurfaceException(string.Format("Too many 0s in {0} {1}.",
-                                isRotated ? "column" : "line", lineIndex));
+                            throw new IncorrectPuzzleSurfaceException(
+                                $"Too many 0s in {(isRotated ? "column" : "line")} {lineIndex}.");
                         }
                         return false;
                     }
@@ -97,9 +97,8 @@ namespace BinaryPuzzleSolver.Engine
                             {
                                 if (throwOnError)
                                 {
-                                    throw new IncorrectPuzzleSurfaceException(string.Format(
-                                        "Found sequence of three {0}s in {1} {2}.", cell1.Value ? "1" : "0",
-                                        isRotated ? "column" : "line", lineIndex));
+                                    throw new IncorrectPuzzleSurfaceException(
+                                        $"Found sequence of three {(cell1.Value ? "1" : "0")}s in {(isRotated ? "column" : "line")} {lineIndex}.");
                                 }
                                 return false;
                             }
@@ -129,8 +128,8 @@ namespace BinaryPuzzleSolver.Engine
                         {
                             if (throwOnError)
                             {
-                                throw new IncorrectPuzzleSurfaceException(string.Format("{0} {1} occurs more than once.",
-                                    isRotated ? "Column" : "Line", lineIndex));
+                                throw new IncorrectPuzzleSurfaceException(
+                                    $"{(isRotated ? "Column" : "Line")} {lineIndex} occurs more than once.");
                             }
                             return false;
                         }

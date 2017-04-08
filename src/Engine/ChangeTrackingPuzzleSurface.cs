@@ -5,7 +5,7 @@ namespace BinaryPuzzleSolver.Engine
     /// <summary>
     /// Represents a puzzle surface that records cell assignments.
     /// </summary>
-    public class ChangeTrackingPuzzleSurface : PuzzleSurface
+    public sealed class ChangeTrackingPuzzleSurface : PuzzleSurface
     {
         // Performance optimization: Setting capacity does not help; calculating the capacity from cells actually makes it slower.
         private readonly Dictionary<SurfacePosition, bool> changedCells = new Dictionary<SurfacePosition, bool>();

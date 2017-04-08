@@ -7,7 +7,7 @@ namespace BinaryPuzzleSolver.Engine
     /// <summary>
     /// Wraps a puzzle surface, but with exactly one cell value that is different from the source surface.
     /// </summary>
-    public class SingleChangePuzzleSurface : IPuzzleSurface
+    public sealed class SingleChangePuzzleSurface : IPuzzleSurface
     {
         private readonly IPuzzleSurface source;
 

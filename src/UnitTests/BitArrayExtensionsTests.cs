@@ -5,7 +5,7 @@ using Xunit;
 
 namespace BinaryPuzzleSolver.UnitTests
 {
-    public class BitArrayExtensionsTests
+    public sealed class BitArrayExtensionsTests
     {
         [Fact]
         public void TestIncrementNull()

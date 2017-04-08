@@ -10,7 +10,7 @@ namespace BinaryPuzzleSolver.Engine
     /// <summary>
     /// Provides methods to construct an <see cref="IPuzzleSurface" /> object from text or a file.
     /// </summary>
-    public class SurfaceFactory
+    public sealed class SurfaceFactory
     {
         public IPuzzleSurface CreateFromExcelXmlFile(string path, string worksheetName)
         {
@@ -56,17 +56,17 @@ namespace BinaryPuzzleSolver.Engine
                 string line = lines[lineIndex];
                 if (line == null)
                 {
-                    throw new ArgumentNullException(string.Format("lines[{0}]", lineIndex));
+                    throw new ArgumentNullException($"lines[{lineIndex}]");
                 }
 
                 if (line.Length == 0)
                 {
-                    throw new ArgumentException(string.Format("Lines[{0}] must not be empty.", lineIndex), nameof(lines));
+                    throw new ArgumentException($"Lines[{lineIndex}] must not be empty.", nameof(lines));
                 }
 
                 if (line.Length % 2 != 0)
                 {
-                    throw new ArgumentException(string.Format("Lines[{0}] must have an even length.", lineIndex), nameof(lines));
+                    throw new ArgumentException($"Lines[{lineIndex}] must have an even length.", nameof(lines));
                 }
 
                 bool?[] columnValues = CreateFromLine(line, lineIndex);
@@ -115,8 +115,7 @@ namespace BinaryPuzzleSolver.Engine
                 else if (ch != '-')
                 {
                     throw new ArgumentOutOfRangeException(nameof(line), line,
-                        string.Format("Found character other than 0, 1 or space on line {0} at position {1}.", lineIndex,
-                            columnIndex));
+                        $"Found character other than 0, 1 or space on line {lineIndex} at position {columnIndex}.");
                 }
             }
             return result;

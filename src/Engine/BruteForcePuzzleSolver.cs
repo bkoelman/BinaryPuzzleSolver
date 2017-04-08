@@ -7,7 +7,7 @@ namespace BinaryPuzzleSolver.Engine
     /// <summary>
     /// Attempts to solve a binary puzzle using recursive brute-force.
     /// </summary>
-    public class BruteForcePuzzleSolver
+    public sealed class BruteForcePuzzleSolver
     {
         public void Solve([NotNull] IPuzzleSurface surface)
         {

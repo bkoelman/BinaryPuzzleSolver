@@ -6,7 +6,7 @@ using Xunit;
 
 namespace BinaryPuzzleSolver.UnitTests
 {
-    public class EngineTests
+    public sealed class EngineTests
     {
         [Fact]
         public void TestPuzzlesOnDisk_Ruleset()
@@ -23,13 +23,13 @@ namespace BinaryPuzzleSolver.UnitTests
                 }
                 catch (Exception ex)
                 {
-                    Assert.True(false, string.Format("{0} At: {1}", ex.Message, path));
+                    Assert.True(false, $"{ex.Message} At: {path}");
 
                     // Workaround for error CS0165: Use of unassigned local variable 'surfacePuzzle'
                     throw;
                 }
 
-                Assert.True(surface.IsSolved, string.Format("Failed to solve puzzle at: {0}", path));
+                Assert.True(surface.IsSolved, $"Failed to solve puzzle at: {path}");
             }
         }
 
@@ -48,13 +48,13 @@ namespace BinaryPuzzleSolver.UnitTests
                 }
                 catch (Exception ex)
                 {
-                    Assert.True(false, string.Format("{0} At: {1}", ex.Message, path));
+                    Assert.True(false, $"{ex.Message} At: {path}");
 
                     // Workaround for error CS0165: Use of unassigned local variable 'surfacePuzzle'
                     throw;
                 }
 
-                Assert.True(surface.IsSolved, string.Format("Failed to solve puzzle at: {0}", path));
+                Assert.True(surface.IsSolved, $"Failed to solve puzzle at: {path}");
             }
         }
 

@@ -4,13 +4,14 @@ using Xunit;
 
 namespace BinaryPuzzleSolver.UnitTests
 {
-    public class SurfaceValidatorTests
+    public sealed class SurfaceValidatorTests
     {
         [Fact]
         public void TestNull()
         {
             Assert.Throws<ArgumentNullException>(() =>
             {
+                // ReSharper disable once UnusedVariable
                 var validator = new SurfaceValidator(null);
             });
         }

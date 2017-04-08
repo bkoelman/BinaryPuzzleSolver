@@ -3,7 +3,7 @@ using BinaryPuzzleSolver.Engine;
 
 namespace BinaryPuzzleSolver.DemoApp
 {
-    public class Program
+    internal static class Program
     {
         private const string DebugPuzzlePath = @"..\Puzzles\BinaryPuzzles.com\Hard\14x14\Puzzle001.xml";
 

@@ -4,7 +4,7 @@ using Xunit;
 
 namespace BinaryPuzzleSolver.UnitTests
 {
-    public class ArrayEqualityComparerTests
+    public sealed class ArrayEqualityComparerTests
     {
         [Fact]
         public void TestEqualsBothNull()

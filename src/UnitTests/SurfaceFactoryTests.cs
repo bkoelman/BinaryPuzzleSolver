@@ -4,7 +4,7 @@ using Xunit;
 
 namespace BinaryPuzzleSolver.UnitTests
 {
-    public class SurfaceFactoryTests
+    public sealed class SurfaceFactoryTests
     {
         [Fact]
         public void TestFailOnNull()

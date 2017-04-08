@@ -4,7 +4,7 @@ using Xunit;
 
 namespace BinaryPuzzleSolver.UnitTests
 {
-    public class RulesetPuzzleSolverTests
+    public sealed class RulesetPuzzleSolverTests
     {
         [Fact]
         public void TestResolveBeforeAfterPairsInLines()

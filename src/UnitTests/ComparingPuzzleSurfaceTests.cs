@@ -4,7 +4,7 @@ using Xunit;
 
 namespace BinaryPuzzleSolver.UnitTests
 {
-    public class ComparingPuzzleSurfaceTests
+    public sealed class ComparingPuzzleSurfaceTests
     {
         [Fact]
         public void TestSourceNull()
@@ -14,6 +14,7 @@ namespace BinaryPuzzleSolver.UnitTests
                 var factory = new SurfaceFactory();
                 IPuzzleSurface answer = factory.CreateFromText("11", "00");
 
+                // ReSharper disable once UnusedVariable
                 var surface = new ComparingPuzzleSurface(null, answer);
             });
         }
@@ -26,6 +27,7 @@ namespace BinaryPuzzleSolver.UnitTests
                 var factory = new SurfaceFactory();
                 IPuzzleSurface source = factory.CreateFromText("11", "00");
 
+                // ReSharper disable once UnusedVariable
                 var surface = new ComparingPuzzleSurface(source, null);
             });
         }
@@ -39,6 +41,7 @@ namespace BinaryPuzzleSolver.UnitTests
                 IPuzzleSurface source = factory.CreateFromText("11", "00");
                 IPuzzleSurface answer = factory.CreateFromText("1101", "0010", "1001", "1010");
 
+                // ReSharper disable once UnusedVariable
                 var surface = new ComparingPuzzleSurface(source, answer);
             });
         }
@@ -51,6 +54,7 @@ namespace BinaryPuzzleSolver.UnitTests
                 var factory = new SurfaceFactory();
                 IPuzzleSurface surface = factory.CreateFromText("10", "0-");
 
+                // ReSharper disable once UnusedVariable
                 var result = new ComparingPuzzleSurface(surface, surface);
             });
         }
@@ -64,6 +68,7 @@ namespace BinaryPuzzleSolver.UnitTests
                 IPuzzleSurface source = factory.CreateFromText("1-", "1-");
                 IPuzzleSurface answer = factory.CreateFromText("10", "01");
 
+                // ReSharper disable once UnusedVariable
                 var result = new ComparingPuzzleSurface(source, answer);
             });
         }
@@ -75,6 +80,7 @@ namespace BinaryPuzzleSolver.UnitTests
             IPuzzleSurface source = factory.CreateFromText("1-", "-0");
             IPuzzleSurface answer = factory.CreateFromText("10", "00");
 
+            // ReSharper disable once UnusedVariable
             var result = new ComparingPuzzleSurface(source, answer);
         }
 

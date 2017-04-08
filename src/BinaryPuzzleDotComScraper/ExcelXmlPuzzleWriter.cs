@@ -9,7 +9,7 @@ using BinaryPuzzleSolver.Engine.Utilities;
 
 namespace BinaryPuzzleDotComScraper
 {
-    public class ExcelXmlPuzzleWriter
+    public sealed class ExcelXmlPuzzleWriter
     {
         private static readonly Dictionary<int, string> Templates = new Dictionary<int, string>();
 

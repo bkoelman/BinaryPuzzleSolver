@@ -2,7 +2,7 @@
 
 namespace BinaryPuzzleSolver.Engine
 {
-    public class ArrayEqualityComparer<T> : IEqualityComparer<T[]>
+    public sealed class ArrayEqualityComparer<T> : IEqualityComparer<T[]>
     {
         public bool Equals(T[] x, T[] y)
         {

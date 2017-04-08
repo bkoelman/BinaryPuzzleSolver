@@ -5,7 +5,7 @@ using System.Net;
 
 namespace BinaryPuzzleDotComScraper
 {
-    public class SiteCrawler
+    public sealed class SiteCrawler
     {
         private const string UrlTemplate = "http://www.binarypuzzle.com/puzzles.php?size={0}&level={1}&nr={2}";
         private const string BaseFolder = @"..\Puzzles\BinaryPuzzles.com";

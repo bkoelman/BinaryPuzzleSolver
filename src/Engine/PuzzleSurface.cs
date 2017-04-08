@@ -56,7 +56,7 @@ namespace BinaryPuzzleSolver.Engine
         {
             Guard.NotNull(cells, nameof(cells));
 
-            // No validation on cells here. 
+            // No validation on cells here.
             // Assume that either factory or a derived class takes that responsibility.
             this.cells = cells;
             LineCount = this.cells.GetLength(0);

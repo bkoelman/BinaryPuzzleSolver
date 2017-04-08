@@ -6,7 +6,7 @@ namespace BinaryPuzzleSolver.Engine
     /// <summary>
     /// The exception that is thrown when a puzzle's cell value differs from the answer.
     /// </summary>
-    public class IncorrectSurfaceCellValueException : Exception
+    public sealed class IncorrectSurfaceCellValueException : Exception
     {
         public IPuzzleSurface SourceSurface { get; }
 

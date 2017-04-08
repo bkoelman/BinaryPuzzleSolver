@@ -10,7 +10,7 @@ using SmallCode.AspNetCore.HtmlAgilityPack;
 
 namespace BinaryPuzzleDotComScraper
 {
-    public class PageParser
+    public sealed class PageParser
     {
         private static readonly Regex PageTitleRegex = new Regex(
             @"^(?<height>[0-9]+)x(?<width>[0-9]+)\sBinary\sPuzzles\s-\sBinaryPuzzle\.com$", RegexOptions.Compiled);

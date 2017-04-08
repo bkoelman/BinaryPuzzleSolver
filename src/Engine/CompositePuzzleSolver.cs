@@ -1,6 +1,6 @@
 ﻿namespace BinaryPuzzleSolver.Engine
 {
-    public class CompositePuzzleSolver
+    public sealed class CompositePuzzleSolver
     {
         public void Solve(IPuzzleSurface surface)
         {
