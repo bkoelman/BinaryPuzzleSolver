@@ -15,8 +15,7 @@ namespace BinaryPuzzleSolver.Engine
 
         // Performance optimization: do not re-count cells when nothing has changed.
         // Map structure: LineIndex or ColumnIndex => { unknownCount, zeroCount }
-        private readonly Dictionary<int, KeyValuePair<int, int>> countInLineCache =
-            new Dictionary<int, KeyValuePair<int, int>>();
+        private readonly Dictionary<int, KeyValuePair<int, int>> countInLineCache = new Dictionary<int, KeyValuePair<int, int>>();
 
         private readonly Dictionary<int, KeyValuePair<int, int>> countInColumnCache =
             new Dictionary<int, KeyValuePair<int, int>>();

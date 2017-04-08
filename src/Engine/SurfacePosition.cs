@@ -37,7 +37,7 @@ namespace BinaryPuzzleSolver.Engine
         {
             if (!ReferenceEquals(obj, null) && obj is SurfacePosition)
             {
-                return Equals((SurfacePosition) obj);
+                return Equals((SurfacePosition)obj);
             }
             return false;
         }

@@ -94,8 +94,8 @@ namespace BinaryPuzzleSolver.Engine
                     bool? answerCell = answer.GetCell(lineIndex, columnIndex);
                     if (answerCell == null)
                     {
-                        throw new InvalidOperationException(
-                            string.Format("Missing value in answer surface at ({0},{1}).", lineIndex, columnIndex));
+                        throw new InvalidOperationException(string.Format("Missing value in answer surface at ({0},{1}).",
+                            lineIndex, columnIndex));
                     }
 
                     bool? sourceCell = source.GetCell(lineIndex, columnIndex);

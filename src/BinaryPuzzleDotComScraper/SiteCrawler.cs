@@ -15,13 +15,13 @@ namespace BinaryPuzzleDotComScraper
             string absoluteFolder = Path.Combine(Directory.GetCurrentDirectory(), BaseFolder);
             Directory.CreateDirectory(absoluteFolder);
 
-            foreach (PuzzleDifficulty difficulty in Enum.GetValues(typeof (PuzzleDifficulty)))
+            foreach (PuzzleDifficulty difficulty in Enum.GetValues(typeof(PuzzleDifficulty)))
             {
                 foreach (int size in new[] { 6, 8, 10, 12, 14 })
                 {
                     foreach (int number in Enumerable.Range(1, 100))
                     {
-                        string url = string.Format(UrlTemplate, size, (int) difficulty, number);
+                        string url = string.Format(UrlTemplate, size, (int)difficulty, number);
                         string puzzlePath = absoluteFolder +
                             string.Format(@"\{0}\{1:00}x{1:00}\Puzzle{2:000}.xml", difficulty, size, number);
 

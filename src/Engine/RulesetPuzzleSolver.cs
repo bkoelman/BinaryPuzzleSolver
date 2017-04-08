@@ -12,8 +12,7 @@ namespace BinaryPuzzleSolver.Engine
     /// </summary>
     public class RulesetPuzzleSolver
     {
-        private static readonly ArrayEqualityComparer<bool> BooleanArrayEqualityComparer =
-            new ArrayEqualityComparer<bool>();
+        private static readonly ArrayEqualityComparer<bool> BooleanArrayEqualityComparer = new ArrayEqualityComparer<bool>();
 
         private readonly IPuzzleSurface sourceSurface;
         private readonly PuzzleRotatedSurface rotatedSurface;
@@ -309,8 +308,7 @@ namespace BinaryPuzzleSolver.Engine
                     {
                         if (!surface.IsLineComplete(lineIndex))
                         {
-                            List<bool[]> matchingCompleteLines = FilterMatchingCompleteLines(completeLines, surface,
-                                lineIndex);
+                            List<bool[]> matchingCompleteLines = FilterMatchingCompleteLines(completeLines, surface, lineIndex);
                             if (matchingCompleteLines.Count > 0)
                             {
                                 // Brute-force create all valid combinations of the unknowns in this line.
@@ -354,7 +352,7 @@ namespace BinaryPuzzleSolver.Engine
             var validCombinations = new List<bool[]>();
 
             int unknownCount = surface.GetCountInLine(lineIndex, null);
-            int combinationCount = checked((int) Math.Pow(2, unknownCount));
+            int combinationCount = checked((int)Math.Pow(2, unknownCount));
 
             var bitArray = new BitArray(unknownCount);
             for (int combinationIndex = 0; combinationIndex < combinationCount; combinationIndex++)
@@ -390,8 +388,7 @@ namespace BinaryPuzzleSolver.Engine
             return validCombinations;
         }
 
-        private List<bool[]> FilterMatchingCompleteLines(List<bool[]> completeLines, IPuzzleSurface surface,
-            int lineIndex)
+        private List<bool[]> FilterMatchingCompleteLines(List<bool[]> completeLines, IPuzzleSurface surface, int lineIndex)
         {
             var matchingCompleteLines = new List<bool[]>();
 

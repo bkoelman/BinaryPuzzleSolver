@@ -27,8 +27,8 @@ namespace BinaryPuzzleSolver.Engine
             }
         }
 
-        public IncorrectSurfaceCellValueException(IPuzzleSurface sourceSurface, IPuzzleSurface answerSurface,
-            int lineIndex, int columnIndex, Exception innerException = null)
+        public IncorrectSurfaceCellValueException(IPuzzleSurface sourceSurface, IPuzzleSurface answerSurface, int lineIndex,
+            int columnIndex, Exception innerException = null)
             : base(null, innerException)
         {
             Guard.NotNull(sourceSurface, nameof(sourceSurface));

@@ -12,16 +12,14 @@ namespace BinaryPuzzleDotComScraper
 {
     public class PageParser
     {
-        private static readonly Regex PageTitleRegex =
-            new Regex(@"^(?<height>[0-9]+)x(?<width>[0-9]+)\sBinary\sPuzzles\s-\sBinaryPuzzle\.com$",
-                RegexOptions.Compiled);
+        private static readonly Regex PageTitleRegex = new Regex(
+            @"^(?<height>[0-9]+)x(?<width>[0-9]+)\sBinary\sPuzzles\s-\sBinaryPuzzle\.com$", RegexOptions.Compiled);
 
-        private static readonly Regex PuzzleNumberOptionRegex = new Regex(@"^<option[^>]*>(?<number>[0-9]+)</option>$",
-            RegexOptions.Compiled);
+        private static readonly Regex PuzzleNumberOptionRegex =
+            new Regex(@"^<option[^>]*>(?<number>[0-9]+)</option>$", RegexOptions.Compiled);
 
         private static readonly Regex ScriptAssignmentRegex =
-            new Regex(
-                @"^(?<varName>puzzel|oplossing)\[(?<rowIndex>[0-9]+)\]\[(?<columnIndex>[0-9]+)\]\s*=\s*'(?<value>[10-])';$",
+            new Regex(@"^(?<varName>puzzel|oplossing)\[(?<rowIndex>[0-9]+)\]\[(?<columnIndex>[0-9]+)\]\s*=\s*'(?<value>[10-])';$",
                 RegexOptions.Compiled);
 
         public IPuzzleSurface Puzzle { get; }
@@ -69,16 +67,12 @@ namespace BinaryPuzzleDotComScraper
 
             using (TextReader reader = new StringReader(html))
             {
-                string selectedOption =
-                    reader.GetLines()
-                        .Select(line => line.Trim())
-                        .SkipWhile(
-                            line =>
-                                !line.StartsWith("<select", StringComparison.Ordinal) ||
-                                line.IndexOf("name=\"level\"", StringComparison.Ordinal) == -1)
-                        .TakeWhile(line => !line.StartsWith("</select>", StringComparison.Ordinal))
-                        .Single(
-                            line => line.StartsWith("<option", StringComparison.Ordinal) && line.Contains("selected"));
+                string selectedOption = reader.GetLines()
+                    .Select(line => line.Trim())
+                    .SkipWhile(line => !line.StartsWith("<select", StringComparison.Ordinal) ||
+                        line.IndexOf("name=\"level\"", StringComparison.Ordinal) == -1)
+                    .TakeWhile(line => !line.StartsWith("</select>", StringComparison.Ordinal))
+                    .Single(line => line.StartsWith("<option", StringComparison.Ordinal) && line.Contains("selected"));
 
                 if (selectedOption.IndexOf("Easy", StringComparison.Ordinal) != -1)
                 {
@@ -110,16 +104,12 @@ namespace BinaryPuzzleDotComScraper
 
             using (TextReader reader = new StringReader(html))
             {
-                string selectedOption =
-                    reader.GetLines()
-                        .Select(line => line.Trim())
-                        .SkipWhile(
-                            line =>
-                                !line.StartsWith("<select", StringComparison.Ordinal) ||
-                                line.IndexOf("name=\"nr\"", StringComparison.Ordinal) == -1)
-                        .TakeWhile(line => !line.StartsWith("</select>", StringComparison.Ordinal))
-                        .Single(
-                            line => line.StartsWith("<option", StringComparison.Ordinal) && line.Contains("selected"));
+                string selectedOption = reader.GetLines()
+                    .Select(line => line.Trim())
+                    .SkipWhile(line => !line.StartsWith("<select", StringComparison.Ordinal) ||
+                        line.IndexOf("name=\"nr\"", StringComparison.Ordinal) == -1)
+                    .TakeWhile(line => !line.StartsWith("</select>", StringComparison.Ordinal))
+                    .Single(line => line.StartsWith("<option", StringComparison.Ordinal) && line.Contains("selected"));
 
                 Match match = PuzzleNumberOptionRegex.Match(selectedOption);
                 if (!match.Success)
@@ -135,11 +125,10 @@ namespace BinaryPuzzleDotComScraper
         {
             using (TextReader reader = new StringReader(script))
             {
-                IEnumerable<string> lines =
-                    reader.GetLines()
-                        .Select(line => line.Trim())
-                        .SkipWhile(line => !line.StartsWith("puzzel[0][0]", StringComparison.Ordinal))
-                        .TakeWhile(line => !line.StartsWith("function", StringComparison.Ordinal));
+                IEnumerable<string> lines = reader.GetLines()
+                    .Select(line => line.Trim())
+                    .SkipWhile(line => !line.StartsWith("puzzel[0][0]", StringComparison.Ordinal))
+                    .TakeWhile(line => !line.StartsWith("function", StringComparison.Ordinal));
 
                 foreach (string line in lines)
                 {
@@ -169,7 +158,7 @@ namespace BinaryPuzzleDotComScraper
 
         private bool? ParseCell(string value)
         {
-            return value == "1" ? true : value == "0" ? false : (bool?) null;
+            return value == "1" ? true : value == "0" ? false : (bool?)null;
         }
     }
 }

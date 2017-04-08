@@ -66,8 +66,7 @@ namespace BinaryPuzzleSolver.Engine
 
                 if (line.Length % 2 != 0)
                 {
-                    throw new ArgumentException(string.Format("Lines[{0}] must have an even length.", lineIndex),
-                        nameof(lines));
+                    throw new ArgumentException(string.Format("Lines[{0}] must have an even length.", lineIndex), nameof(lines));
                 }
 
                 bool?[] columnValues = CreateFromLine(line, lineIndex);

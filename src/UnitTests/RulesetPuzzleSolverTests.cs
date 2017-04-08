@@ -56,8 +56,8 @@ namespace BinaryPuzzleSolver.UnitTests
         [Fact]
         public void TestResolveDigitCountsInColumns()
         {
-            VerifySolve(new[] { "-0----", "0-----", "1-----", "00----" },
-                new[] { "10----", "01----", "11----", "00----" }, solver => solver.ResolveDigitCounts());
+            VerifySolve(new[] { "-0----", "0-----", "1-----", "00----" }, new[] { "10----", "01----", "11----", "00----" },
+                solver => solver.ResolveDigitCounts());
         }
 
         [Fact]
@@ -114,8 +114,7 @@ namespace BinaryPuzzleSolver.UnitTests
         [Fact]
         public void TestResolveNoDuplicateLines()
         {
-            VerifySolve(new[] { "001101", "001--1" }, new[] { "001101", "001011" },
-                solver => solver.ResolveNoDuplicateLines());
+            VerifySolve(new[] { "001101", "001--1" }, new[] { "001101", "001011" }, solver => solver.ResolveNoDuplicateLines());
         }
 
         [Fact]

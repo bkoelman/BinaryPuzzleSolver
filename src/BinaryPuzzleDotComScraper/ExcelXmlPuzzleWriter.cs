@@ -17,10 +17,10 @@ namespace BinaryPuzzleDotComScraper
         {
             var templateSizes = new[] { 6, 8, 10, 12, 14 };
 
-            Assembly assembly = typeof (ExcelXmlPuzzleWriter).GetTypeInfo().Assembly;
+            Assembly assembly = typeof(ExcelXmlPuzzleWriter).GetTypeInfo().Assembly;
             foreach (int size in templateSizes)
             {
-                string resourceName = typeof (ExcelXmlPuzzleWriter).Namespace +
+                string resourceName = typeof(ExcelXmlPuzzleWriter).Namespace +
                     string.Format(".Templates.ExcelXml{0:00}x{0:00}.xml", size);
                 using (Stream stream = assembly.GetManifestResourceStream(resourceName))
                 {
@@ -48,8 +48,7 @@ namespace BinaryPuzzleDotComScraper
             }
             if (!Templates.ContainsKey(puzzle.LineCount))
             {
-                throw new NotSupportedException(string.Format("Puzzle size of {0}x{0} is not supported.",
-                    puzzle.LineCount));
+                throw new NotSupportedException(string.Format("Puzzle size of {0}x{0} is not supported.", puzzle.LineCount));
             }
 
             string template = Templates[puzzle.LineCount];
@@ -63,14 +62,13 @@ namespace BinaryPuzzleDotComScraper
             {
                 using (TextWriter textWriter = new StreamWriter(fileStream))
                 {
-                    using (
-                        XmlWriter xmlWriter = XmlWriter.Create(textWriter,
-                            new XmlWriterSettings
-                            {
-                                Indent = false,
-                                NewLineHandling = NewLineHandling.None,
-                                OmitXmlDeclaration = false
-                            }))
+                    using (XmlWriter xmlWriter = XmlWriter.Create(textWriter,
+                        new XmlWriterSettings
+                        {
+                            Indent = false,
+                            NewLineHandling = NewLineHandling.None,
+                            OmitXmlDeclaration = false
+                        }))
                     {
                         doc.Save(xmlWriter);
                     }
@@ -87,9 +85,8 @@ namespace BinaryPuzzleDotComScraper
             namespaceManager.AddNamespace("ss", ns);
 
             int rowIndex = 0;
-            XPathNodeIterator rowIterator =
-                rootNav.Select("/ss:Workbook/ss:Worksheet[@ss:Name='" + worksheetName + "']/ss:Table/ss:Row",
-                    namespaceManager);
+            XPathNodeIterator rowIterator = rootNav.Select(
+                "/ss:Workbook/ss:Worksheet[@ss:Name='" + worksheetName + "']/ss:Table/ss:Row", namespaceManager);
             while (rowIterator.MoveNext())
             {
                 int columnIndex = 0;
@@ -99,7 +96,7 @@ namespace BinaryPuzzleDotComScraper
                     bool? value = surface.GetCell(rowIndex, columnIndex);
                     if (value != null)
                     {
-                        var node = (XmlNode) columnIterator.Current.UnderlyingObject;
+                        var node = (XmlNode)columnIterator.Current.UnderlyingObject;
 
                         XmlElement dataElement = doc.CreateElement("Data", ns);
                         XmlAttribute typeAttribute = doc.CreateAttribute("ss", "Type", ns);

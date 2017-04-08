@@ -6,8 +6,7 @@ namespace BinaryPuzzleSolver.Engine
 {
     public class SurfaceValidator
     {
-        private static readonly ArrayEqualityComparer<bool> BooleanArrayEqualityComparer =
-            new ArrayEqualityComparer<bool>();
+        private static readonly ArrayEqualityComparer<bool> BooleanArrayEqualityComparer = new ArrayEqualityComparer<bool>();
 
         private readonly IPuzzleSurface sourceSurface;
         private readonly PuzzleRotatedSurface rotatedSurface;
@@ -98,9 +97,9 @@ namespace BinaryPuzzleSolver.Engine
                             {
                                 if (throwOnError)
                                 {
-                                    throw new IncorrectPuzzleSurfaceException(
-                                        string.Format("Found sequence of three {0}s in {1} {2}.",
-                                            cell1.Value ? "1" : "0", isRotated ? "column" : "line", lineIndex));
+                                    throw new IncorrectPuzzleSurfaceException(string.Format(
+                                        "Found sequence of three {0}s in {1} {2}.", cell1.Value ? "1" : "0",
+                                        isRotated ? "column" : "line", lineIndex));
                                 }
                                 return false;
                             }
@@ -130,8 +129,8 @@ namespace BinaryPuzzleSolver.Engine
                         {
                             if (throwOnError)
                             {
-                                throw new IncorrectPuzzleSurfaceException(string.Format(
-                                    "{0} {1} occurs more than once.", isRotated ? "Column" : "Line", lineIndex));
+                                throw new IncorrectPuzzleSurfaceException(string.Format("{0} {1} occurs more than once.",
+                                    isRotated ? "Column" : "Line", lineIndex));
                             }
                             return false;
                         }
