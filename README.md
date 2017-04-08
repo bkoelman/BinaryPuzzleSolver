@@ -1,5 +1,5 @@
 # BinaryPuzzleSolver
-A solver for [binary puzzles](http://www.binarypuzzle.com/), written in C#. Runs on [.NET Core](https://dotnet.github.io/).
+A solver for [binary puzzles](http://www.binarypuzzle.com/), written in C#. Runs on [.NET Core v1.1](https://dotnet.github.io/).
 
 Features:
 * Reading and writing puzzles in Excel xml format. Each such file contains the puzzle on the first worksheet and the answer on the second.

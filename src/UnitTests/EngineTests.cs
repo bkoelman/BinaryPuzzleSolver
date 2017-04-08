@@ -60,7 +60,7 @@ namespace BinaryPuzzleSolver.UnitTests
 
         private IEnumerable<Tuple<IPuzzleSurface, string>> EnumeratePuzzlesInFolder(string folderName)
         {
-            string folder = Path.Combine(Directory.GetCurrentDirectory(), folderName);
+            string folder = Path.Combine(Directory.GetCurrentDirectory(), @"..\..\..", folderName);
 
             foreach (string path in Directory.EnumerateFiles(folder, "*.xml"))
             {
