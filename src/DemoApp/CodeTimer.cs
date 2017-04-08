@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.IO;
 using BinaryPuzzleSolver.Engine.Utilities;
+using JetBrains.Annotations;
 
 namespace BinaryPuzzleSolver.DemoApp
 {
@@ -19,11 +20,16 @@ namespace BinaryPuzzleSolver.DemoApp
     /// </example>
     public sealed class CodeTimer : IDisposable
     {
+        [NotNull]
         private readonly string operation;
+
+        [NotNull]
         private readonly TextWriter outputWriter;
+
+        [NotNull]
         private readonly Stopwatch stopwatch = new Stopwatch();
 
-        public CodeTimer(string operation, TextWriter outputWriter)
+        public CodeTimer([NotNull] string operation, [NotNull] TextWriter outputWriter)
         {
             Guard.NotNull(operation, nameof(operation));
             Guard.NotNull(outputWriter, nameof(outputWriter));
@@ -33,7 +39,7 @@ namespace BinaryPuzzleSolver.DemoApp
             stopwatch.Start();
         }
 
-        public CodeTimer(string operation)
+        public CodeTimer([NotNull] string operation)
             : this(operation, Console.Out)
         {
         }

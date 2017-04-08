@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Xml.Linq;
 using BinaryPuzzleSolver.Engine.Utilities;
+using JetBrains.Annotations;
 
 namespace BinaryPuzzleSolver.Engine
 {
@@ -12,9 +13,11 @@ namespace BinaryPuzzleSolver.Engine
     /// </summary>
     public sealed class SurfaceFactory
     {
-        public IPuzzleSurface CreateFromExcelXmlFile(string path, string worksheetName)
+        [NotNull]
+        public IPuzzleSurface CreateFromExcelXmlFile([NotNull] string path, [NotNull] string worksheetName)
         {
             Guard.NotNull(path, nameof(path));
+            Guard.NotNull(worksheetName, nameof(worksheetName));
 
             const string ns = "{urn:schemas-microsoft-com:office:spreadsheet}";
 
@@ -39,7 +42,8 @@ namespace BinaryPuzzleSolver.Engine
             return CreateFromText(textLines.ToArray());
         }
 
-        public IPuzzleSurface CreateFromText(params string[] lines)
+        [NotNull]
+        public IPuzzleSurface CreateFromText([NotNull] [ItemNotNull] params string[] lines)
         {
             Guard.NotNullNorEmpty(lines, nameof(lines));
 
@@ -98,7 +102,9 @@ namespace BinaryPuzzleSolver.Engine
             return new PuzzleSurface(cells);
         }
 
-        private bool?[] CreateFromLine(string line, int lineIndex)
+        [NotNull]
+        [ItemCanBeNull]
+        private bool?[] CreateFromLine([NotNull] string line, int lineIndex)
         {
             var result = new bool?[line.Length];
             for (int columnIndex = 0; columnIndex < line.Length; columnIndex++)

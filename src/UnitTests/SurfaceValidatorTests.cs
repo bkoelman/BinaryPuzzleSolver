@@ -1,5 +1,6 @@
 ﻿using System;
 using BinaryPuzzleSolver.Engine;
+using JetBrains.Annotations;
 using Xunit;
 
 namespace BinaryPuzzleSolver.UnitTests
@@ -12,6 +13,7 @@ namespace BinaryPuzzleSolver.UnitTests
             Assert.Throws<ArgumentNullException>(() =>
             {
                 // ReSharper disable once UnusedVariable
+                // ReSharper disable once AssignNullToNotNullAttribute
                 var validator = new SurfaceValidator(null);
             });
         }
@@ -114,7 +116,8 @@ namespace BinaryPuzzleSolver.UnitTests
             validator.Validate();
         }
 
-        private SurfaceValidator CreateValidator(string[] surfaceText)
+        [NotNull]
+        private SurfaceValidator CreateValidator([NotNull] [ItemNotNull] string[] surfaceText)
         {
             var factory = new SurfaceFactory();
             IPuzzleSurface surface = factory.CreateFromText(surfaceText);

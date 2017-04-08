@@ -1,5 +1,6 @@
 ﻿using System.Text;
 using BinaryPuzzleSolver.Engine.Utilities;
+using JetBrains.Annotations;
 
 namespace BinaryPuzzleSolver.Engine
 {
@@ -8,6 +9,7 @@ namespace BinaryPuzzleSolver.Engine
     /// </summary>
     public sealed class PuzzleRotatedSurface : IPuzzleSurface
     {
+        [NotNull]
         private readonly IPuzzleSurface source;
 
         public int LineCount => source.ColumnCount;
@@ -16,7 +18,7 @@ namespace BinaryPuzzleSolver.Engine
 
         public bool IsSolved => source.IsSolved;
 
-        public PuzzleRotatedSurface(IPuzzleSurface source)
+        public PuzzleRotatedSurface([NotNull] IPuzzleSurface source)
         {
             Guard.NotNull(source, nameof(source));
 

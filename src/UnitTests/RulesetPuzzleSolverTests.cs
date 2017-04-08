@@ -139,7 +139,8 @@ namespace BinaryPuzzleSolver.UnitTests
         }
 
         [AssertionMethod]
-        private void VerifySolve(string[] input, string[] expected, Action<RulesetPuzzleSolver> solveAction)
+        private void VerifySolve([NotNull] [ItemNotNull] string[] input, [NotNull] [ItemNotNull] string[] expected,
+            [NotNull] Action<RulesetPuzzleSolver> solveAction)
         {
             var factory = new SurfaceFactory();
             IPuzzleSurface surface = factory.CreateFromText(input);

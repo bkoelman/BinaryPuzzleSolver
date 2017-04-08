@@ -6,11 +6,13 @@ using System.Xml;
 using System.Xml.XPath;
 using BinaryPuzzleSolver.Engine;
 using BinaryPuzzleSolver.Engine.Utilities;
+using JetBrains.Annotations;
 
 namespace BinaryPuzzleDotComScraper
 {
     public sealed class ExcelXmlPuzzleWriter
     {
+        [NotNull]
         private static readonly Dictionary<int, string> Templates = new Dictionary<int, string>();
 
         static ExcelXmlPuzzleWriter()
@@ -32,7 +34,7 @@ namespace BinaryPuzzleDotComScraper
             }
         }
 
-        public void Save(string path, IPuzzleSurface puzzle, IPuzzleSurface answer)
+        public void Save([NotNull] string path, [NotNull] IPuzzleSurface puzzle, [NotNull] IPuzzleSurface answer)
         {
             Guard.NotNull(puzzle, nameof(puzzle));
             Guard.NotNull(answer, nameof(answer));
@@ -76,7 +78,8 @@ namespace BinaryPuzzleDotComScraper
             }
         }
 
-        private void SetCells(IPuzzleSurface surface, XmlDocument doc, string worksheetName)
+        private void SetCells([NotNull] IPuzzleSurface surface, [NotNull] [ItemNotNull] XmlDocument doc,
+            [NotNull] string worksheetName)
         {
             const string ns = "urn:schemas-microsoft-com:office:spreadsheet";
 

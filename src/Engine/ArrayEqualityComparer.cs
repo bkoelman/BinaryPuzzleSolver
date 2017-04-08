@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
+using JetBrains.Annotations;
 
 namespace BinaryPuzzleSolver.Engine
 {
     public sealed class ArrayEqualityComparer<T> : IEqualityComparer<T[]>
     {
-        public bool Equals(T[] x, T[] y)
+        public bool Equals([CanBeNull] [ItemCanBeNull] T[] x, [CanBeNull] [ItemCanBeNull] T[] y)
         {
             if (ReferenceEquals(x, y))
             {
@@ -36,7 +37,7 @@ namespace BinaryPuzzleSolver.Engine
             return true;
         }
 
-        public int GetHashCode(T[] obj)
+        public int GetHashCode([CanBeNull] [ItemCanBeNull] T[] obj)
         {
             int hashCode = EqualityComparer<T>.Default.GetHashCode(default(T));
             if (!ReferenceEquals(obj, null))

@@ -1,8 +1,10 @@
-﻿namespace BinaryPuzzleSolver.Engine
+﻿using JetBrains.Annotations;
+
+namespace BinaryPuzzleSolver.Engine
 {
     public sealed class CompositePuzzleSolver
     {
-        public void Solve(IPuzzleSurface surface)
+        public void Solve([NotNull] IPuzzleSurface surface)
         {
             var rulesetPuzzleSolver = new RulesetPuzzleSolver(surface);
             rulesetPuzzleSolver.Solve();

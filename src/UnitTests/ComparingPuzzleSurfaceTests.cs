@@ -15,6 +15,7 @@ namespace BinaryPuzzleSolver.UnitTests
                 IPuzzleSurface answer = factory.CreateFromText("11", "00");
 
                 // ReSharper disable once UnusedVariable
+                // ReSharper disable once AssignNullToNotNullAttribute
                 var surface = new ComparingPuzzleSurface(null, answer);
             });
         }
@@ -28,6 +29,7 @@ namespace BinaryPuzzleSolver.UnitTests
                 IPuzzleSurface source = factory.CreateFromText("11", "00");
 
                 // ReSharper disable once UnusedVariable
+                // ReSharper disable once AssignNullToNotNullAttribute
                 var surface = new ComparingPuzzleSurface(source, null);
             });
         }

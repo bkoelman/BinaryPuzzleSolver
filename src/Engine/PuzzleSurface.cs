@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using BinaryPuzzleSolver.Engine.Utilities;
+using JetBrains.Annotations;
 
 namespace BinaryPuzzleSolver.Engine
 {
@@ -10,13 +11,18 @@ namespace BinaryPuzzleSolver.Engine
     /// </summary>
     public class PuzzleSurface : IPuzzleSurface
     {
+        [NotNull]
+        [ItemCanBeNull]
         private readonly bool?[,] cells;
+
         private bool hasChanges;
 
         // Performance optimization: do not re-count cells when nothing has changed.
         // Map structure: LineIndex or ColumnIndex => { unknownCount, zeroCount }
+        [NotNull]
         private readonly Dictionary<int, KeyValuePair<int, int>> countInLineCache = new Dictionary<int, KeyValuePair<int, int>>();
 
+        [NotNull]
         private readonly Dictionary<int, KeyValuePair<int, int>> countInColumnCache =
             new Dictionary<int, KeyValuePair<int, int>>();
 
@@ -52,7 +58,7 @@ namespace BinaryPuzzleSolver.Engine
             }
         }
 
-        protected internal PuzzleSurface(bool?[,] cells)
+        protected internal PuzzleSurface([NotNull] [ItemCanBeNull] bool?[,] cells)
         {
             Guard.NotNull(cells, nameof(cells));
 

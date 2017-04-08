@@ -1,5 +1,6 @@
 ﻿using System;
 using BinaryPuzzleSolver.Engine.Utilities;
+using JetBrains.Annotations;
 
 namespace BinaryPuzzleSolver.Engine
 {
@@ -9,10 +10,13 @@ namespace BinaryPuzzleSolver.Engine
     /// </summary>
     public sealed class ComparingPuzzleSurface : IPuzzleSurface
     {
+        [NotNull]
         private readonly IPuzzleSurface source;
+
+        [NotNull]
         private readonly IPuzzleSurface answer;
 
-        public ComparingPuzzleSurface(IPuzzleSurface source, IPuzzleSurface answer)
+        public ComparingPuzzleSurface([NotNull] IPuzzleSurface source, [NotNull] IPuzzleSurface answer)
         {
             Guard.NotNull(source, nameof(source));
             Guard.NotNull(answer, nameof(answer));

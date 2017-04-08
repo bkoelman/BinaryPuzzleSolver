@@ -12,9 +12,13 @@ namespace BinaryPuzzleSolver.Engine
     /// </summary>
     public sealed class RulesetPuzzleSolver
     {
+        [NotNull]
         private static readonly ArrayEqualityComparer<bool> BooleanArrayEqualityComparer = new ArrayEqualityComparer<bool>();
 
+        [NotNull]
         private readonly IPuzzleSurface sourceSurface;
+
+        [NotNull]
         private readonly PuzzleRotatedSurface rotatedSurface;
 
         public RulesetPuzzleSolver([NotNull] IPuzzleSurface surface)
@@ -347,7 +351,9 @@ namespace BinaryPuzzleSolver.Engine
             });
         }
 
-        private List<bool[]> CreateLineCombinations(IPuzzleSurface surface, int lineIndex)
+        [NotNull]
+        [ItemNotNull]
+        private List<bool[]> CreateLineCombinations([NotNull] IPuzzleSurface surface, int lineIndex)
         {
             var validCombinations = new List<bool[]>();
 
@@ -388,7 +394,10 @@ namespace BinaryPuzzleSolver.Engine
             return validCombinations;
         }
 
-        private List<bool[]> FilterMatchingCompleteLines(List<bool[]> completeLines, IPuzzleSurface surface, int lineIndex)
+        [NotNull]
+        [ItemNotNull]
+        private List<bool[]> FilterMatchingCompleteLines([NotNull] [ItemNotNull] List<bool[]> completeLines,
+            [NotNull] IPuzzleSurface surface, int lineIndex)
         {
             var matchingCompleteLines = new List<bool[]>();
 
@@ -418,7 +427,7 @@ namespace BinaryPuzzleSolver.Engine
             return matchingCompleteLines;
         }
 
-        private static bool IsValidCompleteSequence(bool[] sequence)
+        private static bool IsValidCompleteSequence([NotNull] bool[] sequence)
         {
             // Check that:
             // - Sequences of same digit are no longer than two.
@@ -450,7 +459,7 @@ namespace BinaryPuzzleSolver.Engine
             return zeroCount == oneCount && zeroCount > 0;
         }
 
-        private bool TrySolve(Action<IPuzzleSurface> body)
+        private bool TrySolve([NotNull] Action<IPuzzleSurface> body)
         {
             bool seenChanges = false;
 

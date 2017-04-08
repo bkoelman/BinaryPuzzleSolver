@@ -1,5 +1,6 @@
 ﻿using System;
 using BinaryPuzzleSolver.Engine.Utilities;
+using JetBrains.Annotations;
 
 namespace BinaryPuzzleSolver.Engine
 {
@@ -8,8 +9,10 @@ namespace BinaryPuzzleSolver.Engine
     /// </summary>
     public sealed class IncorrectSurfaceCellValueException : Exception
     {
+        [NotNull]
         public IPuzzleSurface SourceSurface { get; }
 
+        [NotNull]
         public IPuzzleSurface AnswerSurface { get; }
 
         public int LineIndex { get; }
@@ -27,8 +30,8 @@ namespace BinaryPuzzleSolver.Engine
             }
         }
 
-        public IncorrectSurfaceCellValueException(IPuzzleSurface sourceSurface, IPuzzleSurface answerSurface, int lineIndex,
-            int columnIndex, Exception innerException = null)
+        public IncorrectSurfaceCellValueException([NotNull] IPuzzleSurface sourceSurface, [NotNull] IPuzzleSurface answerSurface,
+            int lineIndex, int columnIndex, [CanBeNull] Exception innerException = null)
             : base(null, innerException)
         {
             Guard.NotNull(sourceSurface, nameof(sourceSurface));

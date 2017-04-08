@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using JetBrains.Annotations;
 
 namespace BinaryPuzzleSolver.Engine
 {
@@ -8,9 +9,10 @@ namespace BinaryPuzzleSolver.Engine
     public sealed class ChangeTrackingPuzzleSurface : PuzzleSurface
     {
         // Performance optimization: Setting capacity does not help; calculating the capacity from cells actually makes it slower.
+        [NotNull]
         private readonly Dictionary<SurfacePosition, bool> changedCells = new Dictionary<SurfacePosition, bool>();
 
-        public ChangeTrackingPuzzleSurface(bool?[,] cells)
+        public ChangeTrackingPuzzleSurface([NotNull] [ItemCanBeNull] bool?[,] cells)
             : base(cells)
         {
         }
@@ -29,6 +31,7 @@ namespace BinaryPuzzleSolver.Engine
             changedCells.Clear();
         }
 
+        [NotNull]
         public IEnumerable<KeyValuePair<SurfacePosition, bool>> GetChangedCells()
         {
             foreach (KeyValuePair<SurfacePosition, bool> pair in changedCells)

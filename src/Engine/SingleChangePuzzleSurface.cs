@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text;
 using BinaryPuzzleSolver.Engine.Utilities;
+using JetBrains.Annotations;
 
 namespace BinaryPuzzleSolver.Engine
 {
@@ -9,6 +10,7 @@ namespace BinaryPuzzleSolver.Engine
     /// </summary>
     public sealed class SingleChangePuzzleSurface : IPuzzleSurface
     {
+        [NotNull]
         private readonly IPuzzleSurface source;
 
         public SurfacePosition DeltaPosition { get; }
@@ -34,7 +36,7 @@ namespace BinaryPuzzleSolver.Engine
             }
         }
 
-        public SingleChangePuzzleSurface(IPuzzleSurface source, SurfacePosition position, bool value)
+        public SingleChangePuzzleSurface([NotNull] IPuzzleSurface source, SurfacePosition position, bool value)
         {
             Guard.NotNull(source, nameof(source));
 

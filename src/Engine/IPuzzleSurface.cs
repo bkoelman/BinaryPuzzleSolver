@@ -1,4 +1,6 @@
-﻿namespace BinaryPuzzleSolver.Engine
+﻿using JetBrains.Annotations;
+
+namespace BinaryPuzzleSolver.Engine
 {
     /// <summary>
     /// Defines the grid of cells that represents a binary puzzle.
@@ -11,18 +13,21 @@
 
         bool IsSolved { get; }
 
+        [CanBeNull]
         bool? GetCell(int lineIndex, int columnIndex);
+
         void SetCell(int lineIndex, int columnIndex, bool value);
 
         bool IsLineComplete(int lineIndex);
         bool IsColumnComplete(int columnIndex);
 
-        int GetCountInLine(int lineIndex, bool? value);
-        int GetCountInColumn(int columnIndex, bool? value);
+        int GetCountInLine(int lineIndex, [CanBeNull] bool? value);
+        int GetCountInColumn(int columnIndex, [CanBeNull] bool? value);
 
         bool HasChanges();
         void AcceptChanges();
 
-        string ToString(string lineSeparator);
+        [NotNull]
+        string ToString([NotNull] string lineSeparator);
     }
 }

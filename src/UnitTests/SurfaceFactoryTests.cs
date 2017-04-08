@@ -1,5 +1,6 @@
 ﻿using System;
 using BinaryPuzzleSolver.Engine;
+using JetBrains.Annotations;
 using Xunit;
 
 namespace BinaryPuzzleSolver.UnitTests
@@ -12,6 +13,7 @@ namespace BinaryPuzzleSolver.UnitTests
             Assert.Throws<ArgumentNullException>(() =>
             {
                 var factory = new SurfaceFactory();
+                // ReSharper disable once AssignNullToNotNullAttribute
                 factory.CreateFromText(null);
             });
         }
@@ -32,7 +34,9 @@ namespace BinaryPuzzleSolver.UnitTests
             Assert.Throws<ArgumentNullException>(() =>
             {
                 var factory = new SurfaceFactory();
+                // ReSharper disable AssignNullToNotNullAttribute
                 factory.CreateFromText(null, null);
+                // ReSharper restore AssignNullToNotNullAttribute
             });
         }
 
@@ -104,7 +108,7 @@ namespace BinaryPuzzleSolver.UnitTests
             VerifySurface(new[] { "1011", "11-0", "0101", "1-10", "-111", "1-11" });
         }
 
-        private void VerifySurface(string[] lines)
+        private void VerifySurface([NotNull] [ItemNotNull] string[] lines)
         {
             var factory = new SurfaceFactory();
             IPuzzleSurface surface = factory.CreateFromText(lines);

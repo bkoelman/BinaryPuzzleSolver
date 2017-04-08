@@ -1,4 +1,5 @@
 ﻿using System;
+using JetBrains.Annotations;
 
 namespace BinaryPuzzleSolver.Engine
 {
@@ -7,7 +8,7 @@ namespace BinaryPuzzleSolver.Engine
     /// </summary>
     public sealed class IncorrectPuzzleSurfaceException : Exception
     {
-        public IncorrectPuzzleSurfaceException(string message)
+        public IncorrectPuzzleSurfaceException([CanBeNull] string message)
             : base(message)
         {
         }

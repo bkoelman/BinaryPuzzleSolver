@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using BinaryPuzzleSolver.Engine;
+using JetBrains.Annotations;
 using Xunit;
 
 namespace BinaryPuzzleSolver.UnitTests
@@ -58,7 +59,9 @@ namespace BinaryPuzzleSolver.UnitTests
             }
         }
 
-        private IEnumerable<Tuple<IPuzzleSurface, string>> EnumeratePuzzlesInFolder(string folderName)
+        [NotNull]
+        [ItemNotNull]
+        private IEnumerable<Tuple<IPuzzleSurface, string>> EnumeratePuzzlesInFolder([NotNull] string folderName)
         {
             string folder = Path.Combine(Directory.GetCurrentDirectory(), @"..\..\..", folderName);
 
@@ -69,7 +72,8 @@ namespace BinaryPuzzleSolver.UnitTests
             }
         }
 
-        private IPuzzleSurface CreateFromDisk(string path)
+        [NotNull]
+        private IPuzzleSurface CreateFromDisk([NotNull] string path)
         {
             var factory = new SurfaceFactory();
 

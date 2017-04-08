@@ -1,17 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using BinaryPuzzleSolver.Engine.Utilities;
+using JetBrains.Annotations;
 
 namespace BinaryPuzzleSolver.Engine
 {
     public sealed class SurfaceValidator
     {
+        [NotNull]
         private static readonly ArrayEqualityComparer<bool> BooleanArrayEqualityComparer = new ArrayEqualityComparer<bool>();
 
+        [NotNull]
         private readonly IPuzzleSurface sourceSurface;
+
+        [NotNull]
         private readonly PuzzleRotatedSurface rotatedSurface;
 
-        public SurfaceValidator(IPuzzleSurface surface)
+        public SurfaceValidator([NotNull] IPuzzleSurface surface)
         {
             Guard.NotNull(surface, nameof(surface));
 
@@ -141,7 +146,7 @@ namespace BinaryPuzzleSolver.Engine
             });
         }
 
-        private bool InnerValidate(Func<IPuzzleSurface, bool /* isRotated */, bool /* succeeded */> body)
+        private bool InnerValidate([NotNull] Func<IPuzzleSurface, bool /* isRotated */, bool /* succeeded */> body)
         {
             // By invoking the validation logic on the source surface and its 90 degrees rotated counterpart,
             // the validation logic only needs to take lines into account. The same validation over columns

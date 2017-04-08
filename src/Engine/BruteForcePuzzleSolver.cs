@@ -22,7 +22,7 @@ namespace BinaryPuzzleSolver.Engine
             }
         }
 
-        private void Flatten(IPuzzleSurface sourceSurface, IPuzzleSurface completedSurface)
+        private void Flatten([NotNull] IPuzzleSurface sourceSurface, [NotNull] IPuzzleSurface completedSurface)
         {
             foreach (SurfacePosition position in GetUnknownPositions(sourceSurface))
             {
@@ -31,8 +31,9 @@ namespace BinaryPuzzleSolver.Engine
             }
         }
 
-        private IPuzzleSurface RecursiveTestUnknownPositionsOnStack(Stack<SurfacePosition> unknownPositions,
-            IPuzzleSurface surface)
+        [CanBeNull]
+        private IPuzzleSurface RecursiveTestUnknownPositionsOnStack([NotNull] Stack<SurfacePosition> unknownPositions,
+            [NotNull] IPuzzleSurface surface)
         {
             var validator = new SurfaceValidator(surface);
             bool isValid = validator.TryValidate();
@@ -66,7 +67,8 @@ namespace BinaryPuzzleSolver.Engine
             return null;
         }
 
-        private Stack<SurfacePosition> GetUnknownPositions(IPuzzleSurface surface)
+        [NotNull]
+        private Stack<SurfacePosition> GetUnknownPositions([NotNull] IPuzzleSurface surface)
         {
             var unknownPositions = new Stack<SurfacePosition>();
             for (int lineIndex = 0; lineIndex < surface.LineCount; lineIndex++)

@@ -13,6 +13,7 @@ namespace BinaryPuzzleSolver.UnitTests
             Assert.Throws<ArgumentNullException>(() =>
             {
                 BitArray bitArray = null;
+                // ReSharper disable once AssignNullToNotNullAttribute
                 bitArray.Increment();
             });
         }

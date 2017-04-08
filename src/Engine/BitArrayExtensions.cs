@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections;
 using BinaryPuzzleSolver.Engine.Utilities;
+using JetBrains.Annotations;
 
 namespace BinaryPuzzleSolver.Engine
 {
     public static class BitArrayExtensions
     {
-        public static void Increment(this BitArray source)
+        public static void Increment([NotNull] [ItemNotNull] this BitArray source)
         {
             Guard.NotNull(source, nameof(source));
 
@@ -27,7 +28,7 @@ namespace BinaryPuzzleSolver.Engine
             throw new OverflowException();
         }
 
-        public static bool AreAllSet(this BitArray source)
+        public static bool AreAllSet([NotNull] [ItemNotNull] this BitArray source)
         {
             Guard.NotNull(source, nameof(source));
 

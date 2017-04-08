@@ -6,31 +6,37 @@ using System.Text.RegularExpressions;
 using System.Xml.XPath;
 using BinaryPuzzleDotComScraper.Extensions;
 using BinaryPuzzleSolver.Engine;
+using JetBrains.Annotations;
 using SmallCode.AspNetCore.HtmlAgilityPack;
 
 namespace BinaryPuzzleDotComScraper
 {
     public sealed class PageParser
     {
+        [NotNull]
         private static readonly Regex PageTitleRegex = new Regex(
             @"^(?<height>[0-9]+)x(?<width>[0-9]+)\sBinary\sPuzzles\s-\sBinaryPuzzle\.com$", RegexOptions.Compiled);
 
+        [NotNull]
         private static readonly Regex PuzzleNumberOptionRegex =
             new Regex(@"^<option[^>]*>(?<number>[0-9]+)</option>$", RegexOptions.Compiled);
 
+        [NotNull]
         private static readonly Regex ScriptAssignmentRegex =
             new Regex(@"^(?<varName>puzzel|oplossing)\[(?<rowIndex>[0-9]+)\]\[(?<columnIndex>[0-9]+)\]\s*=\s*'(?<value>[10-])';$",
                 RegexOptions.Compiled);
 
+        [NotNull]
         public IPuzzleSurface Puzzle { get; }
 
+        [NotNull]
         public IPuzzleSurface Answer { get; }
 
         public PuzzleDifficulty Difficulty { get; private set; }
 
         public int Number { get; private set; }
 
-        public PageParser(string html)
+        public PageParser([NotNull] string html)
         {
             var doc = new HtmlDocument();
             doc.LoadHtml(html);
@@ -60,7 +66,7 @@ namespace BinaryPuzzleDotComScraper
             }
         }
 
-        private void ParseDifficulty(string html)
+        private void ParseDifficulty([NotNull] string html)
         {
             // Due to a bug in HtmlAgilityPack we cannot use:
             // rootNavigator.Select("//select[@name='level']/option[@selected='selected']");
@@ -97,7 +103,7 @@ namespace BinaryPuzzleDotComScraper
             }
         }
 
-        private void ParsePuzzleNumber(string html)
+        private void ParsePuzzleNumber([NotNull] string html)
         {
             // Due to a bug in HtmlAgilityPack we cannot use:
             // rootNavigator.Select("//select[@name='nr']/option[@selected='selected']");
@@ -121,7 +127,7 @@ namespace BinaryPuzzleDotComScraper
             }
         }
 
-        private void ParseScript(string script)
+        private void ParseScript([NotNull] string script)
         {
             using (TextReader reader = new StringReader(script))
             {
@@ -156,7 +162,8 @@ namespace BinaryPuzzleDotComScraper
             }
         }
 
-        private bool? ParseCell(string value)
+        [CanBeNull]
+        private bool? ParseCell([CanBeNull] string value)
         {
             return value == "1" ? true : value == "0" ? false : (bool?)null;
         }

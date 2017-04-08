@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using BinaryPuzzleSolver.Engine;
+using JetBrains.Annotations;
 using Xunit;
 
 namespace BinaryPuzzleSolver.UnitTests
@@ -102,9 +103,10 @@ namespace BinaryPuzzleSolver.UnitTests
 
         private sealed class ObjectWithEquals
         {
+            [CanBeNull]
             public string Value { get; }
 
-            public ObjectWithEquals(string value)
+            public ObjectWithEquals([CanBeNull] string value)
             {
                 Value = value;
             }

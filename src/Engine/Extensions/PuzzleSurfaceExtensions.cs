@@ -1,10 +1,13 @@
 ﻿using BinaryPuzzleSolver.Engine.Utilities;
+using JetBrains.Annotations;
 
 namespace BinaryPuzzleSolver.Engine.Extensions
 {
     public static class PuzzleSurfaceExtensions
     {
-        public static bool?[,] CopyCells(this IPuzzleSurface source)
+        [NotNull]
+        [ItemCanBeNull]
+        public static bool?[,] CopyCells([NotNull] this IPuzzleSurface source)
         {
             Guard.NotNull(source, nameof(source));
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using BinaryPuzzleSolver.Engine;
+using JetBrains.Annotations;
 
 namespace BinaryPuzzleSolver.DemoApp
 {
@@ -31,6 +32,7 @@ namespace BinaryPuzzleSolver.DemoApp
             Console.ReadKey();
         }
 
+        [NotNull]
         private static IPuzzleSurface CreatePuzzle()
         {
             var factory = new SurfaceFactory();
@@ -44,7 +46,7 @@ namespace BinaryPuzzleSolver.DemoApp
             return new ComparingPuzzleSurface(surfacePuzzle, surfaceAnswer);
         }
 
-        private static void DumpSurface(IPuzzleSurface surface)
+        private static void DumpSurface([NotNull] IPuzzleSurface surface)
         {
             foreach (string line in surface.ToString("#").Split('#'))
             {

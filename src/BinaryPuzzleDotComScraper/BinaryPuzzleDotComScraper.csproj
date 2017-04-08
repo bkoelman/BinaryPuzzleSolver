@@ -5,6 +5,16 @@
     <TargetFramework>netcoreapp1.1</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+    <TreatSpecificWarningsAsErrors />
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+    <TreatSpecificWarningsAsErrors />
+  </PropertyGroup>
+
   <ItemGroup>
     <None Remove="Templates\*.xml" />
   </ItemGroup>
@@ -15,6 +25,7 @@
 
   <ItemGroup>
     <PackageReference Include="jetbrains.annotations" Version="10.4.0" />
+    <PackageReference Include="resharpercodecontractnullability" Version="1.0.7" />
     <PackageReference Include="SmallCode.AspNetCore.HtmlAgilityPack" Version="1.0.0" />
     <PackageReference Include="System.Xml.XmlDocument" Version="4.3.0" />
     <PackageReference Include="System.Xml.XPath.XmlDocument" Version="4.3.0" />

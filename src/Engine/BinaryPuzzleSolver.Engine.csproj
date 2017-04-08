@@ -4,8 +4,19 @@
     <TargetFramework>netstandard1.1</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+    <TreatSpecificWarningsAsErrors />
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+    <TreatSpecificWarningsAsErrors />
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="jetbrains.annotations" Version="10.4.0" />
+    <PackageReference Include="resharpercodecontractnullability" Version="1.0.7" />
   </ItemGroup>
 
 </Project>
