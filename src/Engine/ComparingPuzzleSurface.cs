@@ -5,8 +5,8 @@ using JetBrains.Annotations;
 namespace BinaryPuzzleSolver.Engine
 {
     /// <summary>
-    /// A puzzle surface wrapper that verifies setting cell values by comparing to the specified puzzle answer. When a proposed
-    /// cell value differs from the answer, an <see cref="IncorrectSurfaceCellValueException" /> is thrown.
+    /// A puzzle surface wrapper that verifies setting cell values by comparing to the specified puzzle answer. When a proposed cell
+    /// value differs from the answer, an <see cref="IncorrectSurfaceCellValueException" /> is thrown.
     /// </summary>
     public sealed class ComparingPuzzleSurface : IPuzzleSurface
     {

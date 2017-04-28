@@ -73,8 +73,7 @@ namespace BinaryPuzzleDotComScraper
 
             using (TextReader reader = new StringReader(html))
             {
-                string selectedOption = reader.GetLines()
-                    .Select(line => line.Trim())
+                string selectedOption = reader.GetLines().Select(line => line.Trim())
                     .SkipWhile(line => !line.StartsWith("<select", StringComparison.Ordinal) ||
                         line.IndexOf("name=\"level\"", StringComparison.Ordinal) == -1)
                     .TakeWhile(line => !line.StartsWith("</select>", StringComparison.Ordinal))
@@ -110,8 +109,7 @@ namespace BinaryPuzzleDotComScraper
 
             using (TextReader reader = new StringReader(html))
             {
-                string selectedOption = reader.GetLines()
-                    .Select(line => line.Trim())
+                string selectedOption = reader.GetLines().Select(line => line.Trim())
                     .SkipWhile(line => !line.StartsWith("<select", StringComparison.Ordinal) ||
                         line.IndexOf("name=\"nr\"", StringComparison.Ordinal) == -1)
                     .TakeWhile(line => !line.StartsWith("</select>", StringComparison.Ordinal))
@@ -131,8 +129,7 @@ namespace BinaryPuzzleDotComScraper
         {
             using (TextReader reader = new StringReader(script))
             {
-                IEnumerable<string> lines = reader.GetLines()
-                    .Select(line => line.Trim())
+                IEnumerable<string> lines = reader.GetLines().Select(line => line.Trim())
                     .SkipWhile(line => !line.StartsWith("puzzel[0][0]", StringComparison.Ordinal))
                     .TakeWhile(line => !line.StartsWith("function", StringComparison.Ordinal));
 
