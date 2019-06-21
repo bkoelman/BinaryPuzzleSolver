@@ -5,7 +5,7 @@ using Xunit;
 
 namespace BinaryPuzzleSolver.UnitTests
 {
-    public sealed class RulesetPuzzleSolverTests
+    public sealed class RuleSetPuzzleSolverTests
     {
         [Fact]
         public void TestResolveBeforeAfterPairsInLines()
@@ -140,11 +140,11 @@ namespace BinaryPuzzleSolver.UnitTests
 
         [AssertionMethod]
         private void VerifySolve([NotNull] [ItemNotNull] string[] input, [NotNull] [ItemNotNull] string[] expected,
-            [NotNull] Action<RulesetPuzzleSolver> solveAction)
+            [NotNull] Action<RuleSetPuzzleSolver> solveAction)
         {
             var factory = new SurfaceFactory();
             IPuzzleSurface surface = factory.CreateFromText(input);
-            var solver = new RulesetPuzzleSolver(surface);
+            var solver = new RuleSetPuzzleSolver(surface);
 
             solveAction(solver);
 

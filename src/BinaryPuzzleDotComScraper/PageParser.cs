@@ -97,7 +97,7 @@ namespace BinaryPuzzleDotComScraper
                 }
                 else
                 {
-                    throw new Exception(string.Format("Unknown difficulty on line: \"{0}\".", selectedOption));
+                    throw new Exception($"Unknown difficulty on line: \"{selectedOption}\".");
                 }
             }
         }
@@ -118,7 +118,7 @@ namespace BinaryPuzzleDotComScraper
                 Match match = PuzzleNumberOptionRegex.Match(selectedOption);
                 if (!match.Success)
                 {
-                    throw new Exception(string.Format("Failed to read puzzle number on line: \"{0}\".", selectedOption));
+                    throw new Exception($"Failed to read puzzle number on line: \"{selectedOption}\".");
                 }
 
                 Number = int.Parse(match.Groups["number"].Value);

@@ -8,9 +8,9 @@ using JetBrains.Annotations;
 namespace BinaryPuzzleSolver.Engine
 {
     /// <summary>
-    /// Attempts to solve as much as possible of a binary puzzle using built-in rulesets.
+    /// Attempts to solve as much as possible of a binary puzzle using built-in rule sets.
     /// </summary>
-    public sealed class RulesetPuzzleSolver
+    public sealed class RuleSetPuzzleSolver
     {
         [NotNull]
         private static readonly ArrayEqualityComparer<bool> BooleanArrayEqualityComparer = new ArrayEqualityComparer<bool>();
@@ -21,7 +21,7 @@ namespace BinaryPuzzleSolver.Engine
         [NotNull]
         private readonly PuzzleRotatedSurface rotatedSurface;
 
-        public RulesetPuzzleSolver([NotNull] IPuzzleSurface surface)
+        public RuleSetPuzzleSolver([NotNull] IPuzzleSurface surface)
         {
             Guard.NotNull(surface, nameof(surface));
 
@@ -140,7 +140,7 @@ namespace BinaryPuzzleSolver.Engine
             return TrySolve(surface =>
             {
                 // Because a line/column must have the same number of zeroes as ones, unknowns can
-                // be added by counting the occurences of zeroes and ones.
+                // be added by counting the occurrences of zeroes and ones.
                 // Example: 11010-10101101001- =>  9x1 and 7x0, so need two more 0s => 110100101011010010
 
                 // Scan for counts in lines.

@@ -39,7 +39,7 @@ namespace BinaryPuzzleSolver.Engine
 
         public int GetHashCode([CanBeNull] [ItemCanBeNull] T[] obj)
         {
-            int hashCode = EqualityComparer<T>.Default.GetHashCode(default(T));
+            int hashCode = EqualityComparer<T>.Default.GetHashCode(default);
             if (!ReferenceEquals(obj, null))
             {
                 for (int index = 0; index < obj.Length; index++)

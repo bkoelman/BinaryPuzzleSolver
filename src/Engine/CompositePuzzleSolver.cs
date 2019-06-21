@@ -6,8 +6,8 @@ namespace BinaryPuzzleSolver.Engine
     {
         public void Solve([NotNull] IPuzzleSurface surface)
         {
-            var rulesetPuzzleSolver = new RulesetPuzzleSolver(surface);
-            rulesetPuzzleSolver.Solve();
+            var ruleSetPuzzleSolver = new RuleSetPuzzleSolver(surface);
+            ruleSetPuzzleSolver.Solve();
 
             if (!surface.IsSolved)
             {

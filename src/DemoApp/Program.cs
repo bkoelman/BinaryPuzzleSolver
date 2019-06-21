@@ -6,7 +6,7 @@ namespace BinaryPuzzleSolver.DemoApp
 {
     internal static class Program
     {
-        private const string DebugPuzzlePath = @"..\Puzzles\BinaryPuzzles.com\Hard\14x14\Puzzle001.xml";
+        private const string ExamplePuzzlePath = @"..\..\..\..\Puzzles\BinaryPuzzles.com\Hard\14x14\Puzzle001.xml";
 
         public static void Main()
         {
@@ -37,10 +37,10 @@ namespace BinaryPuzzleSolver.DemoApp
         {
             var factory = new SurfaceFactory();
 
-            IPuzzleSurface surfacePuzzle = factory.CreateFromExcelXmlFile(DebugPuzzlePath, "Puzzle");
+            IPuzzleSurface surfacePuzzle = factory.CreateFromExcelXmlFile(ExamplePuzzlePath, "Puzzle");
             new SurfaceValidator(surfacePuzzle).Validate();
 
-            IPuzzleSurface surfaceAnswer = factory.CreateFromExcelXmlFile(DebugPuzzlePath, "Answer");
+            IPuzzleSurface surfaceAnswer = factory.CreateFromExcelXmlFile(ExamplePuzzlePath, "Answer");
             new SurfaceValidator(surfaceAnswer).Validate();
 
             return new ComparingPuzzleSurface(surfacePuzzle, surfaceAnswer);

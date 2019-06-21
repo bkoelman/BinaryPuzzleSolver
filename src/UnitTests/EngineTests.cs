@@ -10,16 +10,16 @@ namespace BinaryPuzzleSolver.UnitTests
     public sealed class EngineTests
     {
         [Fact]
-        public void TestPuzzlesOnDisk_Ruleset()
+        public void TestPuzzlesOnDisk_RuleSet()
         {
-            foreach (Tuple<IPuzzleSurface, string> surfaceWithPath in EnumeratePuzzlesInFolder("RulesetTestPuzzles"))
+            foreach (Tuple<IPuzzleSurface, string> surfaceWithPath in EnumeratePuzzlesInFolder("RuleSetTestPuzzles"))
             {
                 IPuzzleSurface surface = surfaceWithPath.Item1;
                 string path = surfaceWithPath.Item2;
 
                 try
                 {
-                    var solver = new RulesetPuzzleSolver(surface);
+                    var solver = new RuleSetPuzzleSolver(surface);
                     solver.Solve();
                 }
                 catch (Exception ex)

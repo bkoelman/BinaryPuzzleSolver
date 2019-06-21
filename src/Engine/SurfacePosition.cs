@@ -35,9 +35,9 @@ namespace BinaryPuzzleSolver.Engine
 
         public override bool Equals(object obj)
         {
-            if (!ReferenceEquals(obj, null) && obj is SurfacePosition)
+            if (!ReferenceEquals(obj, null) && obj is SurfacePosition surfacePosition)
             {
-                return Equals((SurfacePosition)obj);
+                return Equals(surfacePosition);
             }
             return false;
         }
