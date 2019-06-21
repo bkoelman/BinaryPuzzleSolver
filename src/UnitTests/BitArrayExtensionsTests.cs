@@ -24,7 +24,7 @@ namespace BinaryPuzzleSolver.UnitTests
             var bitArray = new BitArray(1);
             bitArray.Increment();
 
-            Assert.Equal(bitArray[0], true);
+            Assert.True(bitArray[0]);
         }
 
         [Fact]
@@ -34,8 +34,8 @@ namespace BinaryPuzzleSolver.UnitTests
             bitArray.Set(0, true);
             bitArray.Increment();
 
-            Assert.Equal(bitArray[0], false);
-            Assert.Equal(bitArray[1], true);
+            Assert.False(bitArray[0]);
+            Assert.True(bitArray[1]);
         }
 
         [Fact]
@@ -45,8 +45,8 @@ namespace BinaryPuzzleSolver.UnitTests
             bitArray.Set(1, true);
             bitArray.Increment();
 
-            Assert.Equal(bitArray[0], true);
-            Assert.Equal(bitArray[1], true);
+            Assert.True(bitArray[0]);
+            Assert.True(bitArray[1]);
         }
 
         [Fact]
@@ -58,10 +58,10 @@ namespace BinaryPuzzleSolver.UnitTests
             bitArray.Set(2, true);
             bitArray.Increment();
 
-            Assert.Equal(bitArray[0], false);
-            Assert.Equal(bitArray[1], false);
-            Assert.Equal(bitArray[2], false);
-            Assert.Equal(bitArray[3], true);
+            Assert.False(bitArray[0]);
+            Assert.False(bitArray[1]);
+            Assert.False(bitArray[2]);
+            Assert.True(bitArray[3]);
         }
 
         [Fact]
